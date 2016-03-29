@@ -2,7 +2,6 @@
 layout: about
 title: About Me
 categories: articles
-permalink: about
 cover_image_url: /images/cover.jpg
 ---
 

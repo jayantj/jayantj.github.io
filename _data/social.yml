@@ -1,6 +1,6 @@
 social-icons:
  - title: GitHub
-   url: https://github.com/jayant1992
+   url: https://github.com/jayantj
    class: github
  - title: LinkedIn
    url: https://in.linkedin.com/in/jayant-jain-23285693
@@ -8,11 +8,8 @@ social-icons:
  - title: Gmail
    url: mailto:jayantjain1992@gmail.com
    class: envelope
- # - title: Quora
- #   url: https://www.quora.com/profile/Jayant-Jain/activity
- #   class: quora
  - title: Facebook
-   url: https://twitter.com/jayantjain1992
+   url: https://www.facebook.com/jayantjain19
    class: facebook
  - title: Twitter
    url: https://twitter.com/jayantjain1992
