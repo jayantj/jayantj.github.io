@@ -1,0 +1,7 @@
+{% for icon in site.data.social.social-icons %}
+<span class="inline-block mr1">
+  <a href="{{ icon.url }}">
+    <span class="fa fa-{{ icon.class }} "></span>
+  </a>
+</span>
+{% endfor %}

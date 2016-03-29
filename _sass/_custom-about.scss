@@ -1,0 +1,148 @@
+// About me page style
+
+// Pallete;
+$back: white;
+$text-light: #7B7B7B;
+$text-dark: black;
+$accent: #002642;
+$accent-dark: #00151C;
+
+
+// Load fonts
+@font-face {
+    font-family: "Bebas Neue Bold";
+    src:
+    url("../assets/fonts/BebasNeue Bold.otf");
+}
+
+// Code starts here
+::selection {
+  background: $accent; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: $accent; /* Gecko Browsers */
+  color: white;
+}
+
+// Loading bar
+.pace .pace-progress {
+    background: $accent !important;
+}
+
+hr {
+    width: 80%;
+}
+
+a {
+    text-decoration: none;
+    color: $accent;
+    &:hover {
+        color: $text-light;
+    }
+}
+
+// HEADER -----------------------
+#main-head-block {
+    height: 10px;
+    width: 100%;
+    background-color: $accent;
+}
+
+#main-head {
+    font-family: "Bebas Neue Bold";
+    margin-top: 15px;
+    color: $text-light;
+    #name {
+        float: left;
+        font-size: 26px;
+        line-height: 1.3em;
+    }
+    #links {
+        float: right;
+        text-align: right;
+        letter-spacing: 8px;
+        font-size: 12px;
+        margin-top: 5px;
+        line-height: 1.3em;
+    }
+
+    &:after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+}
+
+
+#menu {
+    z-index: 1;
+    display: none;
+    background: white;
+    height: 40px;
+    position: fixed;
+    font-family: "Merriweather";
+    font-size: 13px;
+    font-style: italic;
+
+    ul {
+        list-style: none;
+        background: white;
+        li {
+            display: inline-block;
+        }
+        a {
+            display: block;
+            padding: 5px;
+            padding-left: 25px;
+            padding-right: 25px;
+            text-align: center;
+            -webkit-transition: .5s all ease-out;
+            -moz-transition: .5s all ease-out;
+            transition: .5s all ease-out;
+            border-top: 3px solid white;
+        }
+        li.active a {
+            border-top: 3px solid $accent-dark;
+        }
+    }
+}
+
+// MAIN -----------------------
+
+#main-content {
+    margin-top: 90px;
+
+    .section {
+        margin-bottom: 40px;
+        .section-media {
+            padding-top: 50px;
+            img {
+                width: 100%;
+            }
+        }
+        .section-title {
+            font-family: "Merriweather";
+            font-style: italic;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .section-text {
+            img {
+                width: 100%;
+            }
+            font-family: "Fira Sans";
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 2;
+            text-align: justify;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.measure {
+    max-width: 28em;
+}

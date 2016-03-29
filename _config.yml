@@ -1,0 +1,29 @@
+# Site settings
+title:       jayant jain
+email:       jayantjain1992@gmail.com
+author:      Jayant Jain
+description: "Personal Blog"
+baseurl:     ""
+url:         "https://jayant1992.github.io/"
+logo:         logo.png
+
+# Google analytics
+google_analytics:
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname: jayant_jain
+
+# Contact pane
+contact_form: false
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     5
+sass:
+  compressed: true
+gems:
+  [jekyll-paginate]
