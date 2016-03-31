@@ -23,6 +23,7 @@ for(var n = 1; n <= 2; n++)
   for(var i = 0; i < facecolors.length; i++)
     if(facecolors[i] in table_data)
       table_data[facecolors[i]].push(labels[i])
+  var i = 0;
   var tbody = $('#cluster_table_' + n + ' table tbody')
   while(true)
   {
@@ -41,6 +42,7 @@ for(var n = 1; n <= 2; n++)
     }
     row += '</tr>';
     tbody.append(row);
+    i += 1;
     if(!present)
       break
   }
