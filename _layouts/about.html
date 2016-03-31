@@ -2,10 +2,6 @@
 layout: default
 ---
 
-{% assign minutes = content | number_of_words | divided_by: 180 %}
-{% if minutes == 0 %}
-{% assign minutes = 1 %}
-{% endif %}
 <link rel="stylesheet" href="{{ site.baseurl }}/css/about.css" type="text/css">
 <div class="p2 p-responsive wrap about-post" role="main">
   <div class="measure">
@@ -21,14 +17,12 @@ layout: default
         {% include social.html %}
         <span class="inline-block mr1 span-quora">
           <a href="https://www.quora.com/profile/Jayant-Jain/activity">
-            <!-- <div class="quora-icon inline-block"></div> -->
             <img src="/images/glyphicon-quora.png" class="social-icon">
           </a>
         </span>
         <span class="inline-block span-goodreads">
           <a href="https://www.goodreads.com/review/list/9858064?shelf=read">
             <img src="/images/glyphicon-goodreads.png" class="social-icon">
-            <!-- <div class="goodreads-icon inline-block"></div> -->
           </a>
         </span>
         </div>
@@ -36,21 +30,5 @@ layout: default
       <article class="post-content">
         {{ content }}
       </article>
-
-      {% if site.disqus_shortname %}
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          var disqus_shortname  = '{{ site.disqus_shortname }}';
-          var disqus_identifier = '{{ page.id }}';
-
-          (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      {% endif %}
-    </div>
   </div>
 </div>
