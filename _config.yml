@@ -12,7 +12,7 @@ google_analytics:
 
 # Disqus post comments
 # (leave blank to disable Disqus)
-disqus_shortname: jayant_jain
+disqus_shortname: jayantj
 
 # Contact pane
 contact_form: false
