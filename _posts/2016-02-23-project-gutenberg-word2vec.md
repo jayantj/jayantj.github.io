@@ -28,7 +28,9 @@ Using this idea, I came up with a simple algorithm for calculating a document si
 3. Sum up all dissimilarity scores and normalize to get a dissimilarity score for the two models
 
 <figure>
+  <a class="magnific-zoom" href="/images/posts/w2vec/similarity_method.png">
     <img src="/images/posts/w2vec/similarity_method.png">
+  </a>
     <figcaption>How similarity between two models m1 and m2 is calculated for a particular word</figcaption>
 </figure>
 
@@ -98,7 +100,9 @@ These calculations are performed once for calculating `topn` similar words for e
 `np.matmul` works in such a manner, that a single, large matrix multiplication (for calculating similarity scores for all `S x V` word pairs) takes significantly less time than calculating similarity scores for each word in `S` individually. Hence, I implemented a vectorized version of the algorithm described above, where I calculate similarity scores for the sampled words with respect to the model vocabulary in a single matrix multiplication. I ran a simple profiling of both methods over 50 iterations, computing similarity between two models (vocabulary sizes 15073 and 17011) for `topn = 2000` , and the total times are shown below:
 
 <figure>
-  <img src="/images/posts/w2vec/benchmarks.png" data-zoom-image="/images/posts/w2vec/benchmarks.png" style="transition: -webkit-transform 0.25s ease; -webkit-transform: scale(1.1);">
+  <a class="magnific-zoom" href="/images/posts/w2vec/benchmarks.png">
+    <img src="/images/posts/w2vec/benchmarks.png">
+  </a>
   <figcaption>Profiling for the (a) non-vectorized approach using gensim and (b) optimized approach using numpy</figcaption>
 </figure>
 
