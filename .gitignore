@@ -5,3 +5,6 @@ _drafts
 
 # Ignore the config file that's used for gh-pages.
 _config.gh-pages.yml
+
+# Backup for random unused assets
+ignored_assets
