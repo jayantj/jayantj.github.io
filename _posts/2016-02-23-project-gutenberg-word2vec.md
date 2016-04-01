@@ -2,10 +2,10 @@
 layout: post
 title: Project Gutenberg and Word2Vec
 date: 2016-02-23
-summary: Clustering classic literature through deep learning
+summary: Clustering classic literature with deep learning
 categories: articles
 ---
-tl;dr I clustered top classics from Project Gutenberg using word2vec, [here are the results](#results)
+tl;dr I clustered top classics from Project Gutenberg using word2vec, [here are the results](#results) and [the code](https://github.com/jayantj/w2vec-similarity).
 
 I had been reading up on deep learning and NLP recently, and I found the idea and results behind word2vec very interesting.
 [word2vec](https://code.google.com/archive/p/word2vec/) is a technique to learn vector representations of individual words (called word vectors) by training over a large enough document or corpora. 
@@ -111,7 +111,7 @@ Of course, the size of the matrices being multiplied is very different - the vec
 
 The vectorized approach actually involves a higher number of computations - this is because in the naive method, `model.most_similar` is only called in case the word is present in the model, hence avoiding a few multiplications. However, despite the higher number of computations, numpy seems to perform a large matrix multiplication much faster than a large number of smaller matrix multiplications. This seems like another interesting tidbit to find out more about, and I might look into this later. On a related note, `np.argpartition` (method for partially sorting an array, taking a significant chunk of time) seems to work the other way round - running it on a single large matrix took significantly more time than running it on the individual rows of the matrix. 
 
-The code for the vectorized method can be found [here]().
+The code for the vectorized method can be found [here](https://github.com/jayantj/w2vec-similarity/blob/master/evaluate/evaluate.py#L16-L84).
 
 Getting back to the problem at hand, once I had a similarity measure between documents, clustering them seemed like the obvious next step. The only issue was, word2vec works better for larger document sizes, and most clustering datasets that I could quantitatively evaluate my method on seemed to have fairly small document sizes. So I simply downloaded a sample from the top 100 ebooks on Project Gutenberg and ran it on those - I was quite interested in seeing how classic literature could be clustered. I used [Spectral Clustering](http://scikit-learn.org/stable/modules/clustering.html#spectral-clustering) for clustering the books from the similarity matrix, and [Spectral Embedding](http://scikit-learn.org/stable/modules/manifold.html#spectral-embedding), a manifold learning technique to reduce the dimensionality to 2 dimensions for visualization. 
 
