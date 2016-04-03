@@ -8,7 +8,7 @@ url:         "https://jayant1992.github.io/"
 logo:         logo.png
 
 # Google analytics
-google_analytics:
+google_analytics: UA-75865966-1
 
 # Disqus post comments
 # (leave blank to disable Disqus)
