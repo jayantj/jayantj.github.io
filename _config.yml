@@ -2,9 +2,8 @@
 title:       jayant jain
 email:       jayantjain1992@gmail.com
 author:      Jayant Jain
-description: "Personal Blog"
-baseurl:     ""
-url:         "https://jayant1992.github.io/"
+description: "Software Developer at Housing.com, Undergrad from IIT Roorkee"
+url:         https://jayantj.github.io/
 logo:         logo.png
 
 # Google analytics
@@ -21,9 +20,11 @@ contact_form: false
 markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
+permalink:    /:categories/:title
+post_dirs: false
 paginate:     5
 sass:
   compressed: true
 gems:
-  [jekyll-paginate]
+  - jekyll-paginate
+  - jekyll-sitemap
