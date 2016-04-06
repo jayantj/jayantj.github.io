@@ -5,6 +5,7 @@ date: 2016-02-23
 summary: Clustering classic literature with deep learning
 description: Clustering classic literature with deep learning
 categories: posts
+cover_image: images/posts/w2vec/clusters.png
 ---
 tl;dr I clustered top classics from Project Gutenberg using word2vec, [here are the results](#results) and [the code](https://github.com/jayantj/w2vec-similarity).
 

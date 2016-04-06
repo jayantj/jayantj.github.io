@@ -9,6 +9,9 @@ logo:         logo.png
 # Google analytics
 google_analytics: UA-75865966-1
 
+# Facebook App ID
+fb_app_id: 1732362650375679
+
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname: jayantj
