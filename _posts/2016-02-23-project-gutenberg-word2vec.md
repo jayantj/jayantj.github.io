@@ -2,15 +2,15 @@
 layout: post
 title: Project Gutenberg and Word2Vec
 date: 2016-02-23
-summary: Clustering classic literature with deep learning
-description: Clustering classic literature with deep learning
+summary: Clustering classic literature with word embeddings
+description: Clustering classic literature with word embeddings
 categories: posts
 cover_image: images/posts/w2vec/clusters.png
 ---
 tl;dr I clustered top classics from Project Gutenberg using word2vec, [here are the results](#results) and [the code](https://github.com/jayantj/w2vec-similarity).
 
 I had been reading up on deep learning and NLP recently, and I found the idea and results behind word2vec very interesting.
-[word2vec](https://code.google.com/archive/p/word2vec/) is a technique to learn vector representations of individual words (called word vectors) by training over a large enough document or corpora. 
+[word2vec](https://code.google.com/archive/p/word2vec/) is a technique to learn vector representations of individual words (called word vectors) by training over a large enough document or corpora. Although, I should mention word2vec is a shallow model, and shouldn't be categorised as deep learning.
 
 It learns by using words in the "context" of a target word to predict the occurrence of that word. The "context" is usually taken to be the surrounding words in a fixed size window on either side of the given word. These word vectors are then learned by training over all possible (context, target) pairs from the document or corpora. 
 
