@@ -17,7 +17,7 @@ I’ve used the analogical reasoning task described in the Word2Vec paper [[1]](
 
 The first comparison is on Gensim and FastText models trained on the Brown corpus. For detailed code and information about the hyperparameters, you can have a look at this [IPython notebook](https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/Word2Vec_FastText_Comparison.ipynb).
 
-The task used is the analogical reasoning task mentioned above, and the evaluation below has been done using FastText and Word2Vec models trained on the Brown corpus.
+The task used is the analogical reasoning task mentioned above, and the first evaluation below has been done using FastText and Word2Vec models trained on the Brown corpus.
 
 <figure>
   <a class="magnific-zoom" href="/images/posts/embedding-comparison/brown_initial.png">
@@ -38,7 +38,7 @@ This analogy is marked correct if:
 
 `= embedding(calm)` – `embedding(calmly)`
 
-Both these subtractions would result in a very similar set of remaining ngrams, and hence the resulting vectors would be very similar. No surprise the fastText embeddings do extremely well on this.
+Both these subtractions would result in a very similar set of remaining n-grams, and hence the resulting vectors would be very similar. No surprise the fastText embeddings do extremely well on this.
 
 Let’s do a small test to validate this hypothesis – fastText differs from word2vec only in that it uses char n-gram embeddings as well as the actual word embedding in the scoring function to calculate scores and then likelihoods for each word, given a context word. In case char n-gram embeddings are not present, this reduces (at least in theory) to the original word2vec model. This can be implemented by setting 0 for the max length of char n-grams for fastText.
 
@@ -46,7 +46,7 @@ Let’s do a small test to validate this hypothesis – fastText differs from wo
   <a class="magnific-zoom" href="/images/posts/embedding-comparison/brown_nong.png">
     <img src="/images/posts/embedding-comparison/brown_nong.png">
   </a>
-    <figcaption>Evaluation on analogy task for FastText model trained with no ngrams on Brown corpus</figcaption>
+    <figcaption>Evaluation on analogy task for FastText model trained with no n-grams on Brown corpus</figcaption>
 </figure>
 
 A-ha! The results for FastText with no n-grams and Word2Vec look a lot more similar (as they should) – the differences could easily result from differences in implementation between fastText and Gensim, and randomization. Especially telling is that the semantic accuracy for FastText has improved slightly after removing n-grams, while the syntactic accuracy has taken a giant dive. Our hypothesis that the char n-grams result in better performance on syntactic analogies seems fair. It also seems possible that char n-grams hurt semantic accuracy a little. However, the Brown corpus is too small to be able to draw any definite conclusions – the accuracies seem to vary significantly over different runs.
@@ -64,7 +64,7 @@ Let’s try with a larger corpus now – text8 (collection of wiki articles). I�
   <a class="magnific-zoom" href="/images/posts/embedding-comparison/text8_ft_nong.png">
     <img src="/images/posts/embedding-comparison/text8_ft_nong.png">
   </a>
-    <figcaption>Evaluation on analogy task for FastText model trained with no ngrams on Brown corpus</figcaption>
+    <figcaption>Evaluation on analogy task for FastText model trained with no n-grams on Brown corpus</figcaption>
 </figure>
 
 <figure>
