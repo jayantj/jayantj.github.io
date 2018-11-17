@@ -8,9 +8,6 @@ social-icons:
  - title: Gmail
    url: mailto:jayantjain1992@gmail.com
    class: envelope
- - title: Facebook
-   url: https://www.facebook.com/jayantjain19
-   class: facebook
  - title: Twitter
    url: https://twitter.com/jayantjain1992
    class: twitter
